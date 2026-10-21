@@ -1,0 +1,1 @@
+# hickman-legacy-property-group
