@@ -6,3 +6,18 @@
 /* Investor portal */
 .investor-portal{margin-top:44px;padding-top:32px;border-top:1px solid #d4d2c8}.portal-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:24px}.portal-heading h3{font:34px var(--serif);font-weight:500;margin:0 0 8px}.portal-heading p:not(.kicker){font-size:11px;color:#657067;margin:0;max-width:460px}.portal-note{max-width:270px;padding:13px 15px;border-left:2px solid var(--gold);font-size:9px;line-height:1.8;color:#69736b}.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.portal-form{background:#f8f7f2;border:1px solid #dedbd1;padding:24px;display:flex;flex-direction:column}.portal-form h4,.saved-properties h4{font:23px var(--serif);font-weight:500;margin:0 0 17px}.portal-form input,.portal-form select,.portal-form textarea{background:#fff}.portal-form .goldbtn{align-self:flex-start}.saved-properties{margin-top:25px;padding:22px;background:#f8f7f2;border:1px solid #dedbd1}.saved-properties>div:first-child p{font-size:10px;color:#68736c;margin:0 0 12px}.saved-list{font-size:10px;color:#68736c;line-height:1.8}.saved-list a{font-weight:700;color:#26382d;text-decoration:underline}.saved-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid #e5e2d9}.save-property{border:1px solid #c6a365;background:transparent;color:#24352c;padding:9px 11px;font:700 9px var(--sans);cursor:pointer;margin-top:12px}.save-property.saved{background:#0b1915;color:#f6f4ee}.portal-form .formnote{line-height:1.6}
 @media(max-width:700px){.portal-heading{display:block}.portal-note{margin-top:16px}.portal-grid{grid-template-columns:1fr}.portal-form{padding:19px}.saved-item{align-items:flex-start;flex-direction:column}}
+
+
+/* Supabase investor account interface */
+.auth-panel,.account-panel{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;background:#f8f7f2;border:1px solid #dedbd1;padding:24px;margin:0 0 20px}
+.auth-panel h4,.account-panel h4{font:23px var(--serif);font-weight:500;margin:0 0 7px}
+.auth-panel p,.account-panel p{font-size:10px;line-height:1.8;color:#68736c;margin:0}
+.auth-form{display:grid;grid-template-columns:1fr;gap:0}
+.auth-form input{background:#fff}
+.auth-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.auth-secondary{border:1px solid #bba77d;background:transparent;color:#24352c;padding:13px 15px;font:700 10px var(--sans);cursor:pointer}
+.auth-panel[hidden],.account-panel[hidden]{display:none}
+.account-panel{grid-template-columns:1fr auto}
+.saved-item strong{font-size:9px;text-transform:capitalize;color:#8a6d3d}
+button:disabled{opacity:.55;cursor:wait}
+@media(max-width:700px){.auth-panel,.account-panel{grid-template-columns:1fr;padding:19px}.account-panel{align-items:start}}
