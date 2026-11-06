@@ -108,7 +108,7 @@ if(contactForm){
       if(!authForm.reportValidity())return;
       const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;
       signUpButton.disabled=true;signUpButton.textContent='Creating…';setMessage('Creating your investor account…');
-      try{const {data,error}=await db.auth.signUp({email,password});if(error)throw error;if(data.session){await showSession(data.session);setMessage('Your account is ready.');}else setMessage('Account created. Check your email for a confirmation link, then return here and sign in.');}
+      try{const {data,error}=await db.auth.signUp({email,password},{emailRedirectTo:'https://hickman-legacy-property-group.vercel.app/'});if(error)throw error;if(data.session){await showSession(data.session);setMessage('Your account is ready.');}else setMessage('Account created. Check your email for a confirmation link, then return here and sign in.');}
       catch(err){const detail=[err?.message,err?.code,err?.status?('HTTP '+err.status):null].filter(Boolean).join(' · ');setMessage('Account creation failed'+(detail?': '+detail:'. Supabase returned no error details; check the Supabase Auth settings and project URL/key.'));}
       finally{signUpButton.disabled=false;signUpButton.textContent='Create Account';}
     });
