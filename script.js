@@ -1,1 +1,37 @@
-const menu=document.getElementById('menu');const nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰';menu.setAttribute('aria-expanded','false')}));document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const email='YOUR-EMAIL@example.com';if(email==='YOUR-EMAIL@example.com'){alert('Before the contact form can send, replace YOUR-EMAIL@example.com in script.js with your business email.');return}const f=new FormData(e.target);const subject=encodeURIComponent('Hickman Legacy Property Group — '+f.get('topic'));const body=encodeURIComponent('Name: '+f.get('name')+'\nEmail: '+f.get('email')+'\nTopic: '+f.get('topic')+'\n\nMessage:\n'+f.get('message'));location.href=`mailto:${email}?subject=${subject}&body=${body}`});
+const menu=document.getElementById('menu');
+const nav=document.getElementById('nav');
+if(menu&&nav){
+  menu.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded',String(open));
+    menu.textContent=open?'×':'☰';
+  });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    menu.textContent='☰';
+    menu.setAttribute('aria-expanded','false');
+  }));
+}
+const year=document.getElementById('year');
+if(year) year.textContent=new Date().getFullYear();
+
+const contactForm=document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!contactForm.reportValidity()) return;
+    const form=new FormData(contactForm);
+    const recipient='hickmanfinancialgroup@gmail.com';
+    const subject='Hickman Legacy Property Group — '+(form.get('topic')||'Website inquiry');
+    const body=[
+      'Name: '+(form.get('name')||''),
+      'Email: '+(form.get('email')||''),
+      'Topic: '+(form.get('topic')||''),
+      '',
+      'Message:',
+      form.get('message')||''
+    ].join('\n');
+    const mailto='mailto:'+recipient+'?'+new URLSearchParams({subject,body}).toString();
+    window.location.href=mailto;
+  });
+}
