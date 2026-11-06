@@ -25,7 +25,7 @@ if(contactForm){
 
 // Supabase investor portal with CDN fallback and visible error reporting.
 (function(){
-  const SUPABASE_URL='https://anvuwribvgbrulzqyti.supabase.co';
+  const SUPABASE_URL='https://rpzmjiiomgjttjjrkkqf.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_Lwcv2EAfLV4gAn51_JtlVA_iEEimZIi';
   const message=document.getElementById('authMessage');
   const authPanel=document.getElementById('authPanel');
