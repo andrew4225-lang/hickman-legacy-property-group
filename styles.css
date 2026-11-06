@@ -21,3 +21,18 @@
 .saved-item strong{font-size:9px;text-transform:capitalize;color:#8a6d3d}
 button:disabled{opacity:.55;cursor:wait}
 @media(max-width:700px){.auth-panel,.account-panel{grid-template-columns:1fr;padding:19px}.account-panel{align-items:start}}
+
+/* Membership revenue section */
+.revenue{background:#f7f5ef}
+.revenue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:850px}
+.revenue-card{background:#fff;border:1px solid #dedbd1;padding:28px;display:flex;flex-direction:column}
+.revenue-featured{border:1px solid #c6a365;box-shadow:inset 0 3px #c6a365}
+.revenue-label{font-size:9px;letter-spacing:1.8px;font-weight:700;color:#987843;margin:0 0 12px}
+.revenue-card h3{font:26px var(--serif);font-weight:500;margin:0 0 8px}
+.revenue-price{font:38px var(--serif);color:#92713e;margin:0 0 12px}
+.revenue-price small{font:11px var(--sans);color:#68736c}
+.revenue-card ul{padding-left:18px;margin:0 0 22px;color:#657067;font-size:11px;line-height:2}
+.revenue-link{align-self:flex-start;margin-top:auto;background:#0b1915;color:#f5f2e9;padding:12px 14px;font-size:9px;font-weight:700}
+.revenue-note{max-width:850px;font-size:10px;line-height:1.9;color:#747b72;margin-top:20px}
+.revenue-note strong{color:#26382d}
+@media(max-width:650px){.revenue-grid{grid-template-columns:1fr}.revenue-card{padding:23px}}
